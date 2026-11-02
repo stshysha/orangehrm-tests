@@ -55,3 +55,10 @@ tests/
   *.spec.ts       # Test files
 playwright.config.ts
 ```
+
+## Design decisions
+
+- Playwright + TypeScript - native support for modern web apps, built-in waiting strategies, and strong TypeScript integration make it well-suited for maintainable UI automation.
+- Page Object Model - each page is a separate class, keeping selectors and actions in one place. Adding new tests doesn't require touching existing page logic.
+- Separate test data file - credentials and test values are isolated from test logic, making it easy to update or parameterize later.
+- Single worker, sequential execution — chosen to avoid race conditions on the shared demo environment.
